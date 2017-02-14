@@ -1,5 +1,5 @@
 package algorithm_basic;
-
+import java.math.*;
 import java.util.Scanner;
 
 public class bj_2193 {
@@ -9,7 +9,11 @@ public class bj_2193 {
 		int N = sc.nextInt();
 		long[] d = new long[N+1];
 		
-		d[1] = d[2] = 1;
+		d[1] = 1;
+		
+		if (N >= 2) {
+            d[2] = 1;
+        }
 		
 		for (int i = 3; i <= N; i++) 
 			d[i] = d[i-1] + d[i-2];
